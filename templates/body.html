@@ -1,0 +1,78 @@
+{% block head %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorguesser</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        h1, div, p {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        .button {
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 32px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .input {
+            width: 7%;
+            padding: 8px;
+            margin-top: 32px;
+            border: 1px solid rgb(0, 0, 0);
+            background-color: #000000;
+            color: #ffffff;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: rgb(255, 255, 255);
+            opacity: 1; /* Firefox */
+        }
+
+        div.background {
+            border-radius: 20px;
+            margin: auto;
+            background-color: white;
+            max-width: 50%;
+        }
+
+
+    </style>
+
+</head>
+{% endblock %}
+
+
+{% block body %}
+<body style="background-color: rgb({{r}}, {{g}}, {{b}});">
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
+{% endblock %}

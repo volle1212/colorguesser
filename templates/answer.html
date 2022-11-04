@@ -1,0 +1,21 @@
+{% extends "body.html"%}
+{% block content %}
+<h1>This is your color</h1>
+{% if points == 0 %}
+<p>Your score was perfect, FANTASIC JOB! You are a true color champion (or Mark Zuckerburg)!</p>
+{% elif points < 50 %}
+<p>You were {{points}} points off, GREAT JOB!</p>
+{% elif points < 100 %}
+<p>You were {{points}} points off, your almost at the top!</p>
+{% elif points < 200 %}
+<p>You were {{points}} points off. You are not the worst...</p>
+{% elif points > 200 %}
+<p>You were {{points}} points off. Maybe go and take a colorblind test?</p>
+{% endif %}
+
+<p>Your answer was: {{r, b, g}} and the correct answer was:</p><p style="background-color: rgb({{r_answer}}, {{g_answer}}, {{b_answer}});"> {{r_answer, b_answer, g_answer}}</p>
+
+<div>
+    <a href="/"><button class="button">TRY AGAIN</button></a>
+</div>
+{% endblock %}
