@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorguesser</title>
+</head>
+<body style="background-color: rgb({{r}}, {{g}}, {{b}});">
+
+    <style>
+        h1,p,div {
+            text-align: center;
+            font-family: 'Rubik', sans-serif;
+        }
+        .button {
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            
+        }
+
+    </style>
+
+    <h1>Results</h1>
+    {% if points == 0 %}
+    <p>Your score was perfect, FANTASIC JOB! You are a true color champion (or Mark Zuckerburg)!</p>
+    {% elif points < 50 %}
+    <p>You were {{points}} points off, GREAT JOB!</p>
+    {% elif points < 100 %}
+    <p>You were {{points}} points off, your almost at the top!</p>
+    {% elif points < 200 %}
+    <p>You were {{points}} points off. You are not the worst...</p>
+    {% elif points > 200 %}
+    <p>You were {{points}} points off. Maybe go and take a colorblind test?</p>
+    {% endif %}
+    <div>
+        <a href="/"><button class="button">try again</button></a>
+    </div>
+</body>
+</html>
